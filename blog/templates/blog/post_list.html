@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+  }
+
+  li {
+    float: left;
+    text-align: center;
+    font-size: 20px;
+
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  li a:hover {
+    background-color: gray;
+  }
+
+.item1 { grid-area: header; }
+.item2 { grid-area: main; }
+.item3 { grid-area: right; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main right'
+    'footer footer footer footer footer footer';
+    grid-template-rows: 220px 500px 150px;
+  grid-gap: 10px;
+  background-color: white;
+  padding: 10px;
+  row-gap: 20px;
+}
+
+.grid-container > div {
+  background-color: gray;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+#myFile{
+    width: 233px;
+    height: 50px;
+    font-size: 18px;
+}
+
+  </style>
+
+</head>
+<body>
+<div>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+</div>
+</br>
+<div class="grid-container">
+  <div class="item1">INFO</div>
+  <div class="item2">Map</div>
+  <div class="item3">
+    Geojson Upload
+    <hr><br><br>
+  <form >
+  <input type="file" id="myFile" name="filename"><br><br>
+  <input type="submit">
+  </form>
+  </div>
+  <div class="item4">Description</div>
+</div>
+
+
+</body>
+</html>
